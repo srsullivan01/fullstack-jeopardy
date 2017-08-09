@@ -1,40 +1,30 @@
-require('dotenv').config();
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const express = require('express');
+require("dotenv").config();
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 const app = express();
 
-moongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
-moongoose.connect(process.env.MONGODB_URI);
+// Mongoose Connection
+mongoose.connect(process.env.MONGODB_URI);
 const connection = mongoose.connection;
 
 connection.on('connected', () => {
-  console.log('mongoose connected');
+  console.log("Mongoose Connected Successfully");
 })
 
 connection.on('error', (err) => {
-  console.log('mongoose connection failed ' + err);
+  console.log("Mongoose connection error: " + err);
 })
-
 
 app.use(bodyParser.json());
 
-app.get('/', (res, req)=>{
-    res.send('Hello World');
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 
-
-
-
-
-
-
-
-
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-    console.log('App listening on ' + PORT);
+  console.log("App is listening on: " + PORT);
 });
-Add Comment Collapse
