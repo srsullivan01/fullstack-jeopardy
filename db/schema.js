@@ -1,21 +1,17 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
 
-
-mongoose.Promise = global.Promise;
-
-const QuestionSchema= new Schema({
+const QuestionSchema= mongoose.Schema({
   value: Number,
   question: String,
   answer: String,
 });
 
-const CategorySchema= new Schema({
+const CategorySchema= mongoose.Schema({
   name: String,
   questions: [QuestionSchema],
 });
 
-const GameSchema = new Schema({
+const GameSchema = mongoose.Schema({
   user: String,
   points: Number,
   board: [Boolean],

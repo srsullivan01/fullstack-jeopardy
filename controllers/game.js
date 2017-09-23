@@ -1,11 +1,29 @@
 const express = require("express");
 const Game = require("../models/game");
+const Category = require("../models/category");
 
 const router = express.Router();
 
 router.get("/", (req, res) => {
   Game.find().then((games) => {
     res.json(games);
+  });
+});
+
+router.post("/", (req, res) => {
+  const newGame = new Game();
+  newGame.user = req.body.user;
+  newGame.points = 0;
+  newGame.categories = [];
+  Category.find().then((categories) => {
+    for (var i = 0; i < 6; i++){
+      const randomNumber = Math.floor(Math.random() * categories.length);
+      const randomCategory = categories[randomNumber];
+      newGame.categories.push(randomCategory);
+    }
+    return newGame.save();
+  }).then((game) => {
+    return res.json(game);
   });
 });
 
