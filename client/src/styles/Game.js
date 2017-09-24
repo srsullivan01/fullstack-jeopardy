@@ -8,6 +8,8 @@ export const GameStyle = styled.div`
 `;
 
 export const GameBoardStyles = styled.div`
+  display: flex;
+  flex-direction: row;
   background-color: #326273;
   height: 80vh;
   width: 90vw;
