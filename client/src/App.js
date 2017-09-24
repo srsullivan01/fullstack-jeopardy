@@ -4,6 +4,8 @@ import Home from './components/Home';
 import Game from './components/Game';
 import AddCategory from './components/AddCategory';
 import NavBar from './styles/NavBar';
+import './App.css';
+
 
 
 class App extends Component {

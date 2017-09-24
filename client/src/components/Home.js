@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
+import { StyledHeader, StyledLink } from '../styles/Game';
+
 
 class Home extends Component {
   constructor() {
@@ -39,7 +41,7 @@ class Home extends Component {
     } else {
       return (
         <div>
-          <h1>JEOPARDY</h1>
+          <StyledHeader>JEOPARDY</StyledHeader>
           <form onSubmit={this._handleSubmit}>
             <input
               onChange={this._handleChange}
@@ -53,9 +55,9 @@ class Home extends Component {
             {this.state.games.map((game, i) => {
               return (
                 <li key={i}>
-                  <Link to={`/game/${game._id}`}>
+                  <StyledLink to={`/game/${game._id}`}>
                     {" "}{game.user}'s Game{" "}
-                  </Link>
+                  </StyledLink>
                 </li>
               );
             })}

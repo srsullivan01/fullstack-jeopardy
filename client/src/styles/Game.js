@@ -1,10 +1,17 @@
 import styled from 'styled-components';
+import { Link, Redirect } from "react-router-dom";
 
 export const GameStyle = styled.div`
   text-align: center;
   h1, h3{
     margin: 4px;
+    font-family: 'Alegreya', serif;
   }
+`;
+
+export const StyledHeader = styled.h1`
+  font-family: 'Alegreya', serif;
+  margin: 4px;
 `;
 
 export const GameBoardStyles = styled.div`
@@ -27,7 +34,7 @@ export const TileStyle = styled.div`
   justify-content: center;
   align-items: center;
   font-size: ${props => props.active ? "1rem" : "2rem"};
-  font-family: 'Lato';
+  font-family: 'Droid Sans', sans-serif;
   font-weight: 700;
   color: ${props => props.question ? "#00A7E1" : "FFF"}
 `;
@@ -35,4 +42,13 @@ export const TileStyle = styled.div`
 export const CategoryStyle = styled.div`
   height: 100%;
   width: 20%;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  font-family: 'Droid Sans', sans-serif;
+  color: #062C3D;
+  &:visted{
+    color: #326273;
+  }
 `;
