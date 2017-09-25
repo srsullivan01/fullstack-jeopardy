@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
-import { StyledHeader, StyledLink } from '../styles/Game';
+import { StyledHeader, StyledLink, StyledBody, StyledButton, MenuContainer } from '../styles/Game';
+import '../App.css';
 
 
 class Home extends Component {
@@ -40,17 +41,18 @@ class Home extends Component {
       return <Redirect to={`/game/${this.state.id}`} />;
     } else {
       return (
-        <div>
+        <MenuContainer>
           <StyledHeader>JEOPARDY</StyledHeader>
+          <StyledBody>
           <form onSubmit={this._handleSubmit}>
             <input
               onChange={this._handleChange}
               value={this.state.username}
               type="text"
             />
-            <button>New Game</button>
+            <StyledButton>New Game</StyledButton>
           </form>
-
+          <h3>Existing Games: </h3>
           <ul>
             {this.state.games.map((game, i) => {
               return (
@@ -62,7 +64,8 @@ class Home extends Component {
               );
             })}
           </ul>
-        </div>
+        </StyledBody>
+      </MenuContainer>
       );
     }
   }

@@ -6,12 +6,21 @@ export const GameStyle = styled.div`
   h1, h3{
     margin: 4px;
     font-family: 'Alegreya', serif;
+    color: white;
   }
 `;
 
 export const StyledHeader = styled.h1`
   font-family: 'Alegreya', serif;
   margin: 4px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-shadow:
+ -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+   1px 1px 0 #000;
 `;
 
 export const GameBoardStyles = styled.div`
@@ -51,4 +60,26 @@ export const StyledLink = styled(Link)`
   &:visted{
     color: #326273;
   }
+`;
+
+export const StyledBody = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledButton = styled.button`
+  background-color: #326273;
+  color: white;
+  margin: 3%;
+`;
+
+export const MenuContainer = styled.div`
+  background-color: rgba(255,255,255, 0.5);
+  padding: 4%;
+  margin: 2.5%;
+  border-style: solid;
+  border-radius: 3px;
+  border-color: #326273;
 `;
