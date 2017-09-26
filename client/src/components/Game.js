@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import GameBoard from './GameBoard';
-import { GameStyle } from '../styles/Game';
+import { GameStyle, StyledHeader } from '../styles/Game';
 
 
 class Game extends Component {
@@ -53,9 +53,11 @@ class Game extends Component {
     return (
 
       <GameStyle>
+        <StyledHeader>
         <h1>Jeopardy</h1>
         <h3>Hello {this.state.user}</h3>
         <h3>Points: {this.state.points}</h3>
+      </StyledHeader>
         <GameBoard submitAnswer={this._submitAnswer} categories={this.state.categories} />
       </GameStyle>
     );
