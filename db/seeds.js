@@ -80,7 +80,7 @@ const starWars = new Category({
   questions: [lando, skyhopper, tattoos, blaster, jabba]
 })
 
-const drWho = new Question({
+const drwho = new Question({
   question: "\"Torchwood\" is an anagram and spin-off of what popular British sci-fi series?",
   answer: "Dr Who",
   value: 200
@@ -105,14 +105,14 @@ const xfiles = new Question({
 })
 
 const batman = new Question({
-  question: "In the flashpoint alternate universe, this character becomes the Joker."
+  question: "In the flashpoint alternate universe, this character becomes the Joker.",
   answer: "Martha Wayne",
   value: 1000
 })
 
 const geekStuff = new Category({
   name: "Geeky Stuff",
-  questions: [drWho, terabyte, venus, xfiles, batman]
+  questions: [drwho, terabyte, venus, xfiles, batman]
 })
 
 const furby = new Question({
@@ -157,7 +157,7 @@ const karaoke = new Question({
   value: 200
 })
 
-const nagasaki = new QUestion({
+const nagasaki = new Question({
   question: "The second atomic bomb ever used was dropped on this city.",
   answer: "Nagasaki",
   value: 400
@@ -189,7 +189,7 @@ const japan = new Category({
 const game = new Game({
   user: "WDI11",
   points: 0,
-  categories: [popMusic], [starWars], [geekStuff], [artificialInt], [japan]
+  categories: [popMusic, starWars, geekStuff, artificialInt, japan]
 })
 
 japan.save().then(() => console.log("Japan saved!"));
