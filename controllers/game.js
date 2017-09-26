@@ -1,6 +1,6 @@
 const express = require("express");
-const Game = require("../models/game");
-const Category = require("../models/category");
+const Game = require("../models/Game");
+const Category = require("../models/Category");
 
 const router = express.Router();
 

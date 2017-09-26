@@ -1,6 +1,6 @@
 const express = require("express");
-const Category = require("../models/category");
-const Question = require("../models/question");
+const Category = require("../models/Category");
+const Question = require("../models/Question");
 const router = express.Router();
 
 router.get("/", (req, res) => {
